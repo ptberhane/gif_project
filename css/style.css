@@ -1,7 +1,9 @@
 body {
 	background-image:url("../images/zoo.jpg");
-
+	width:200px;
+	height:200px;
 	}
 .images{
 	padding:80px;
+	background-color:white;
 }

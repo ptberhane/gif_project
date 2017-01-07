@@ -29,16 +29,16 @@ $("button").on("click", function() {
         });
     });
 
-function addButton(textOfAnimal){
-       var anotherButton =  $('<button>').text(textOfAnimal);
+function addButton(anotherAnimal){
+       var anotherButton =  $('<button>').text(anotherAnimal);
        $('#buttons').append(anotherButton);
        console.log(anotherButton);
       }
 
  $("#add-animal").on("click", function(event) {
-     var newAnimal = $("#animal").val();
-        $("#buttons").html(newAnimal);
-
-       
-        renderButtons();
+    event.preventDefault();
+     var newAnimal = $("#animal").val().trim();
+        $("#buttons").push(newAnimal);
+        addButton()
       });
+
