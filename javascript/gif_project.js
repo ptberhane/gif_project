@@ -1,6 +1,6 @@
 $("button").on("click", function() {
       var animal = $(this).data("animal");
-      var myURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      var myURL = "https://api.giphy.com/v1/gifs/search?q=" +
         animal + "&api_key=dc6zaTOxFJmzC&limit=9";
 
 
