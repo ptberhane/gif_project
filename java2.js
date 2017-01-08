@@ -1,7 +1,6 @@
-var animals = ["dog", "lion"];
-
+var animals = ["Dog","Lion", "Hamster","Dolphin","Tiger","Whale"];
       function renderButtons() {
-        $('#images').empty();
+        $("#buttons").empty();
         for ( var i=0; i <animals.length; i ++){
           var newButton = $('<button>');
           newButton.text(animals[i]);
@@ -33,14 +32,12 @@ var animals = ["dog", "lion"];
         // The renderButtons function is called, rendering the list of movie buttons
         renderButtons();
       });
-
-      // Calling the renderButtons function to display the initial list of movies
       renderButtons();
 
-$("button").on("click", function() {
-      var animal = $(this).data("animal");
+$("#buttons").on("click", function() {
+     var animal = .data("animal");
       var myURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=dc6zaTOxFJmzC&limit=9";
+        animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 
       $.ajax({
@@ -67,3 +64,4 @@ $("button").on("click", function() {
           }
         });
     });
+

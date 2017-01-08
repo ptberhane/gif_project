@@ -1,7 +1,34 @@
+var animals = [""];
+      function renderButtons() {
+        $("#buttons").empty();
+        for ( var i=0; i <animals.length; i ++){
+          var newButton = $('<button>');
+          newButton.text(animals[i]);
+          $("#buttons").append(newButton);
+
+        }
+      }
+
+function addButton(newAnimal){
+       var anotherButton =  $('<button>').text(newAnimal);
+       $('#buttons').append(anotherButton);
+      }
+
+      $("#add-animal").on("click", function(event) {
+        event.preventDefault();
+        var animalText = $('#animal').val();
+        animals.push(animalText);
+        renderButtons();
+      });
+      renderButtons();
+
+
+
+
 $("button").on("click", function() {
       var animal = $(this).data("animal");
       var myURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=dc6zaTOxFJmzC&limit=9";
+        animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 
       $.ajax({
@@ -29,16 +56,7 @@ $("button").on("click", function() {
         });
     });
 
-function addButton(anotherAnimal){
-       var anotherButton =  $('<button>').text(anotherAnimal);
-       $('#buttons').append(anotherButton);
-       console.log(anotherButton);
-      }
 
- $("#add-animal").on("click", function(event) {
-    event.preventDefault();
-     var newAnimal = $("#animal").val().trim();
-        $("#buttons").push(newAnimal);
-        addButton()
-      });
+
+
 
